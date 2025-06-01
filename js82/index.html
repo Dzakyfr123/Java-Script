@@ -1,0 +1,29 @@
+<p id="text47"></p>
+<style>
+  .grow-up {
+    display: inline-block;
+    transform: translateY(30px) scaleY(0.5);
+    opacity: 0;
+    animation: growUp 0.5s forwards;
+  }
+  @keyframes growUp {
+    to {
+      transform: translateY(0) scaleY(1);
+      opacity: 1;
+    }
+  }
+</style>
+<script>
+  const msg47 = "Tumbuh dari Bawah";
+  let i47 = 0;
+  function growUpText() {
+    const span = document.createElement("span");
+    span.textContent = msg47[i47];
+    span.className = "grow-up";
+    span.style.animationDelay = `${i47 * 0.1}s`;
+    document.getElementById("text47").appendChild(span);
+    i47++;
+    if (i47 < msg47.length) setTimeout(growUpText, 90);
+  }
+  growUpText();
+</script>

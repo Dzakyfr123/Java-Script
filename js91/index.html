@@ -1,0 +1,26 @@
+<p id="text57"></p>
+<style>
+  .fade-out {
+    display: inline-block;
+    animation: fadeOut 1.5s forwards;
+  }
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+    }
+  }
+</style>
+<script>
+  const msg57 = "Menghilang Bertahap";
+  let i57 = 0;
+  function fadeOutText() {
+    const span = document.createElement("span");
+    span.textContent = msg57[i57];
+    span.className = "fade-out";
+    span.style.animationDelay = `${i57 * 0.1}s`;
+    document.getElementById("text57").appendChild(span);
+    i57++;
+    if(i57 < msg57.length) setTimeout(fadeOutText, 100);
+  }
+  fadeOutText();
+</script>

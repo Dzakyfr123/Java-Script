@@ -1,0 +1,28 @@
+<p id="text33"></p>
+<style>
+  .rotate360 {
+    display: inline-block;
+    transform: rotateZ(-360deg);
+    opacity: 0;
+    animation: rotIn 0.5s forwards;
+  }
+  @keyframes rotIn {
+    to {
+      transform: rotateZ(0);
+      opacity: 1;
+    }
+  }
+</style>
+<script>
+  const msg33 = "Rotasi Masuk";
+  let i33 = 0;
+  function rotate360() {
+    const span = document.createElement("span");
+    span.textContent = msg33[i33];
+    span.className = "rotate360";
+    document.getElementById("text33").appendChild(span);
+    i33++;
+    if (i33 < msg33.length) setTimeout(rotate360, 100);
+  }
+  rotate360();
+</script>

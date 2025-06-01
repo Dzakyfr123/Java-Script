@@ -1,0 +1,23 @@
+<p id="text41"></p>
+<style>
+  #text41::after {
+    content: "|";
+    animation: blinkCursor 0.8s infinite;
+  }
+  @keyframes blinkCursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+</style>
+<script>
+  const msg41 = "Mesin Ketik + Kursor";
+  let i41 = 0;
+  function typeCursor() {
+    if (i41 < msg41.length) {
+      document.getElementById("text41").textContent += msg41[i41];
+      i41++;
+      setTimeout(typeCursor, 120);
+    }
+  }
+  typeCursor();
+</script>

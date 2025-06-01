@@ -1,0 +1,25 @@
+<p id="text53"></p>
+<style>
+  .flash {
+    display: inline-block;
+    animation: flashAnim 0.7s forwards;
+  }
+  @keyframes flashAnim {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+</style>
+<script>
+  const msg53 = "Flash Huruf";
+  let i53 = 0;
+  function flashLetters() {
+    const span = document.createElement("span");
+    span.textContent = msg53[i53];
+    span.className = "flash";
+    span.style.animationDelay = `${i53 * 0.1}s`;
+    document.getElementById("text53").appendChild(span);
+    i53++;
+    if (i53 < msg53.length) setTimeout(flashLetters, 100);
+  }
+  flashLetters();
+</script>

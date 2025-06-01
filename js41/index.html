@@ -1,0 +1,28 @@
+<p id="text7" style="overflow: hidden;"></p>
+<style>
+  .slide-letter {
+    display: inline-block;
+    transform: translateX(-30px);
+    opacity: 0;
+    animation: slideIn 0.3s forwards;
+  }
+  @keyframes slideIn {
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+</style>
+<script>
+  const msg7 = "Slide dari kiri";
+  let i7 = 0;
+  function slideText() {
+    const span = document.createElement("span");
+    span.textContent = msg7[i7];
+    span.className = "slide-letter";
+    document.getElementById("text7").appendChild(span);
+    i7++;
+    if (i7 < msg7.length) setTimeout(slideText, 100);
+  }
+  slideText();
+</script>

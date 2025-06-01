@@ -1,0 +1,30 @@
+<p id="text59"></p>
+<style>
+  .spin3d {
+    display: inline-block;
+    opacity: 0;
+    transform-style: preserve-3d;
+    animation: spin3dAnim 0.7s forwards;
+  }
+  @keyframes spin3dAnim {
+    to {
+      opacity: 1;
+      transform: rotateY(0deg);
+    }
+  }
+</style>
+<script>
+  const msg59 = "Putar 3D";
+  let i59 = 0;
+  function spin3dText() {
+    const span = document.createElement("span");
+    span.textContent = msg59[i59];
+    span.className = "spin3d";
+    span.style.animationDelay = `${i59 * 0.1}s`;
+    span.style.transform = "rotateY(180deg)";
+    document.getElementById("text59").appendChild(span);
+    i59++;
+    if(i59 < msg59.length) setTimeout(spin3dText, 80);
+  }
+  spin3dText();
+</script>

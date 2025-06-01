@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Penjumlahan dari Dropdown</h2>
+  <select id="a">
+    <option value="10">10</option>
+    <option value="20">20</option>
+  </select>
+  +
+  <select id="b">
+    <option value="5">5</option>
+    <option value="15">15</option>
+  </select>
+  <button onclick="jumlah()">Jumlahkan</button>
+  <p>Hasil: <span id="hasil"></span></p>
+
+  <script>
+    function jumlah() {
+      let a = parseInt(document.getElementById("a").value);
+      let b = parseInt(document.getElementById("b").value);
+      document.getElementById("hasil").textContent = a + b;
+    }
+  </script>
+</body>
+</html>

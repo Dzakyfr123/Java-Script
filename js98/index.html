@@ -1,0 +1,25 @@
+<p id="text64"></p>
+<style>
+  .fade-random {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeInRandom 0.5s forwards;
+  }
+  @keyframes fadeInRandom {
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+<script>
+  const msg64 = "Fade-In Acak";
+  const el64 = document.getElementById("text64");
+
+  for (let i = 0; i < msg64.length; i++) {
+    const span = document.createElement("span");
+    span.textContent = msg64[i];
+    span.className = "fade-random";
+    span.style.animationDelay = `${Math.random() * 1.5}s`;
+    el64.appendChild(span);
+  }
+</script>

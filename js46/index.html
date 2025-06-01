@@ -1,0 +1,15 @@
+<p id="text12"></p>
+<script>
+  const msg12 = "Warna Pelangi";
+  const colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+  let i12 = 0;
+  function rainbowType() {
+    const span = document.createElement("span");
+    span.textContent = msg12[i12];
+    span.style.color = colors[i12 % colors.length];
+    document.getElementById("text12").appendChild(span);
+    i12++;
+    if (i12 < msg12.length) setTimeout(rainbowType, 150);
+  }
+  rainbowType();
+</script>

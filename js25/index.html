@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Warna Berdasarkan Hasil</h2>
+  <input id="a" type="number"> + <input id="b" type="number">
+  <button onclick="jumlah()">Jumlahkan</button>
+  <p id="hasil" style="font-weight: bold;"></p>
+
+  <script>
+    function jumlah() {
+      let a = parseInt(document.getElementById("a").value) || 0;
+      let b = parseInt(document.getElementById("b").value) || 0;
+      let hasil = a + b;
+      let p = document.getElementById("hasil");
+      p.textContent = "Hasil: " + hasil;
+      p.style.color = hasil > 100 ? "red" : "green";
+    }
+  </script>
+</body>
+</html>

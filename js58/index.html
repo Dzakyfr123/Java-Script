@@ -1,0 +1,28 @@
+<p id="text24"></p>
+<style>
+  .slide-right {
+    display: inline-block;
+    transform: translateX(50px);
+    opacity: 0;
+    animation: slideR 0.4s forwards;
+  }
+  @keyframes slideR {
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+</style>
+<script>
+  const msg24 = "Slide dari kanan";
+  let i24 = 0;
+  function slideFromRight() {
+    const span = document.createElement("span");
+    span.textContent = msg24[i24];
+    span.className = "slide-right";
+    document.getElementById("text24").appendChild(span);
+    i24++;
+    if (i24 < msg24.length) setTimeout(slideFromRight, 100);
+  }
+  slideFromRight();
+</script>

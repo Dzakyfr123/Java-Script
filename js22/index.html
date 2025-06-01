@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Penjumlahan Otomatis</h2>
+  <input id="a" type="number" oninput="jumlah()"> + 
+  <input id="b" type="number" oninput="jumlah()">
+  <p>Hasil: <span id="hasil"></span></p>
+
+  <script>
+    function jumlah() {
+      let x = parseFloat(document.getElementById("a").value) || 0;
+      let y = parseFloat(document.getElementById("b").value) || 0;
+      document.getElementById("hasil").textContent = x + y;
+    }
+  </script>
+</body>
+</html>

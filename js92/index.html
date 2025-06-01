@@ -1,0 +1,29 @@
+<p id="text58"></p>
+<style>
+  .glow {
+    display: inline-block;
+    opacity: 0;
+    animation: glowAnim 1s forwards;
+    color: #39ff14;
+    text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+  }
+  @keyframes glowAnim {
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+<script>
+  const msg58 = "Huruf Berpendar";
+  let i58 = 0;
+  function glowText() {
+    const span = document.createElement("span");
+    span.textContent = msg58[i58];
+    span.className = "glow";
+    span.style.animationDelay = `${i58 * 0.15}s`;
+    document.getElementById("text58").appendChild(span);
+    i58++;
+    if(i58 < msg58.length) setTimeout(glowText, 100);
+  }
+  glowText();
+</script>

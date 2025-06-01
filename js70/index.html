@@ -1,0 +1,28 @@
+<p id="text36"></p>
+<style>
+  .shrink-in {
+    display: inline-block;
+    transform: scale(2);
+    opacity: 0;
+    animation: shrinkIn 0.4s forwards;
+  }
+  @keyframes shrinkIn {
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+</style>
+<script>
+  const msg36 = "Menyusut Muncul";
+  let i36 = 0;
+  function shrinkText() {
+    const span = document.createElement("span");
+    span.textContent = msg36[i36];
+    span.className = "shrink-in";
+    document.getElementById("text36").appendChild(span);
+    i36++;
+    if (i36 < msg36.length) setTimeout(shrinkText, 100);
+  }
+  shrinkText();
+</script>

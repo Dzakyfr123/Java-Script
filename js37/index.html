@@ -1,0 +1,12 @@
+<p id="text2"></p>
+<script>
+  const words = "Animasi muncul per kata".split(" ");
+  let i2 = 0;
+  function showWords() {
+    if (i2 < words.length) {
+      document.getElementById("text2").innerHTML += words[i2++] + " ";
+      setTimeout(showWords, 500);
+    }
+  }
+  showWords();
+</script>

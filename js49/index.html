@@ -1,0 +1,24 @@
+<p id="text15"></p>
+<style>
+  .rotate-letter {
+    display: inline-block;
+    transform: rotateY(90deg);
+    animation: rotateIn 0.5s forwards;
+  }
+  @keyframes rotateIn {
+    to { transform: rotateY(0); }
+  }
+</style>
+<script>
+  const msg15 = "Rotate Masuk";
+  let i15 = 0;
+  function rotateInText() {
+    const span = document.createElement("span");
+    span.textContent = msg15[i15];
+    span.className = "rotate-letter";
+    document.getElementById("text15").appendChild(span);
+    i15++;
+    if (i15 < msg15.length) setTimeout(rotateInText, 100);
+  }
+  rotateInText();
+</script>

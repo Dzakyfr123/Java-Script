@@ -1,0 +1,26 @@
+<p id="text39"></p>
+<style>
+  .fax-letter {
+    display: inline-block;
+    opacity: 0;
+    animation: faxBar 0.3s forwards;
+  }
+  @keyframes faxBar {
+    0% { transform: scaleY(0); opacity: 0; }
+    100% { transform: scaleY(1); opacity: 1; }
+  }
+</style>
+<script>
+  const msg39 = "Efek Mesin Fax";
+  let i39 = 0;
+  function faxEffect() {
+    const span = document.createElement("span");
+    span.textContent = msg39[i39];
+    span.className = "fax-letter";
+    span.style.animationDelay = `${i39 * 0.1}s`;
+    document.getElementById("text39").appendChild(span);
+    i39++;
+    if (i39 < msg39.length) setTimeout(faxEffect, 90);
+  }
+  faxEffect();
+</script>

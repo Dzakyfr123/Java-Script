@@ -1,0 +1,12 @@
+<p id="text1"></p>
+<script>
+  const msg1 = "Animasi Typewriter";
+  let i1 = 0;
+  function type1() {
+    if (i1 < msg1.length) {
+      document.getElementById("text1").innerHTML += msg1.charAt(i1++);
+      setTimeout(type1, 100);
+    }
+  }
+  type1();
+</script>

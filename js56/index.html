@@ -1,0 +1,19 @@
+<p id="text22">XXXXXXXXXXXX</p>
+<script>
+  const msg22 = "Huruf Acak Muncul";
+  const container = document.getElementById("text22");
+  let revealed = Array(msg22.length).fill(false);
+
+  function revealRandomChar() {
+    let index;
+    do {
+      index = Math.floor(Math.random() * msg22.length);
+    } while (revealed[index]);
+
+    revealed[index] = true;
+    container.textContent = container.textContent.substring(0, index) + msg22[index] + container.textContent.substring(index + 1);
+
+    if (revealed.includes(false)) setTimeout(revealRandomChar, 100);
+  }
+  revealRandomChar();
+</script>

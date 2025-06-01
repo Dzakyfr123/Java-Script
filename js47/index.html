@@ -1,0 +1,27 @@
+<p id="text13"></p>
+<style>
+  .fade-scale {
+    opacity: 0;
+    transform: scale(0.5);
+    animation: fadeScale 0.4s forwards;
+  }
+  @keyframes fadeScale {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+</style>
+<script>
+  const msg13 = "Fade & Scale";
+  let i13 = 0;
+  function fadeScaleText() {
+    const span = document.createElement("span");
+    span.textContent = msg13[i13];
+    span.className = "fade-scale";
+    document.getElementById("text13").appendChild(span);
+    i13++;
+    if (i13 < msg13.length) setTimeout(fadeScaleText, 100);
+  }
+  fadeScaleText();
+</script>

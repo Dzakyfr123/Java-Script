@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Toggle Warna Background</title>
+  <style>
+    body {
+      background-color: white;
+      color: black;
+      transition: all 0.3s ease;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .dark-mode {
+      background-color: black;
+      color: white;
+    }
+
+    .switch-btn {
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mode Terang / Gelap</h1>
+  <button onclick="toggleMode()" class="switch-btn">Ganti Warna</button>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+</body>
+</html>

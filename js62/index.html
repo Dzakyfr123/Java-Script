@@ -1,0 +1,25 @@
+<p id="text28"></p>
+<style>
+  .fade-word {
+    opacity: 0;
+    animation: fadeInWord 1s forwards;
+  }
+  @keyframes fadeInWord {
+    to { opacity: 1; }
+  }
+</style>
+<script>
+  const msg28 = "Teks muncul per kata secara bertahap";
+  const words = msg28.split(" ");
+  let i28 = 0;
+  function fadeWord() {
+    const span = document.createElement("span");
+    span.textContent = words[i28] + " ";
+    span.className = "fade-word";
+    span.style.animationDelay = (i28 * 0.4) + "s";
+    document.getElementById("text28").appendChild(span);
+    i28++;
+    if (i28 < words.length) setTimeout(fadeWord, 100);
+  }
+  fadeWord();
+</script>

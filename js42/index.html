@@ -1,0 +1,23 @@
+<p id="text8"></p>
+<style>
+  .fade-color {
+    opacity: 0;
+    animation: fadeColor 0.5s forwards;
+  }
+  @keyframes fadeColor {
+    to { opacity: 1; color: cyan; }
+  }
+</style>
+<script>
+  const msg8 = "Fade warna teks";
+  let i8 = 0;
+  function fadeColor() {
+    const span = document.createElement("span");
+    span.textContent = msg8[i8];
+    span.className = "fade-color";
+    document.getElementById("text8").appendChild(span);
+    i8++;
+    if (i8 < msg8.length) setTimeout(fadeColor, 100);
+  }
+  fadeColor();
+</script>

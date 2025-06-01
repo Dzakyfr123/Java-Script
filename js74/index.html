@@ -1,0 +1,28 @@
+<p id="text40"></p>
+<style>
+  .expand-mid {
+    display: inline-block;
+    transform: scaleX(0);
+    opacity: 0;
+    animation: expandIn 0.5s forwards;
+  }
+  @keyframes expandIn {
+    to {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+  }
+</style>
+<script>
+  const msg40 = "Teks Berkembang Tengah";
+  let i40 = 0;
+  function expandText() {
+    const span = document.createElement("span");
+    span.textContent = msg40[i40];
+    span.className = "expand-mid";
+    document.getElementById("text40").appendChild(span);
+    i40++;
+    if (i40 < msg40.length) setTimeout(expandText, 90);
+  }
+  expandText();
+</script>

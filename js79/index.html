@@ -1,0 +1,23 @@
+<p id="text45"></p>
+<style>
+  .wave {
+    display: inline-block;
+    animation: waveAnim 1s ease-in-out infinite;
+  }
+  @keyframes waveAnim {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+</style>
+<script>
+  const msg45 = "Teks Bergelombang";
+  const el45 = document.getElementById("text45");
+
+  for (let i = 0; i < msg45.length; i++) {
+    const span = document.createElement("span");
+    span.textContent = msg45[i];
+    span.className = "wave";
+    span.style.animationDelay = `${i * 0.1}s`;
+    el45.appendChild(span);
+  }
+</script>

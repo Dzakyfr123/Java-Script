@@ -1,0 +1,28 @@
+<p id="text44"></p>
+<style>
+  .split-in {
+    display: inline-block;
+    transform: scaleY(0);
+    opacity: 0;
+    animation: splitAppear 0.4s forwards;
+  }
+  @keyframes splitAppear {
+    to {
+      transform: scaleY(1);
+      opacity: 1;
+    }
+  }
+</style>
+<script>
+  const msg44 = "Membelah Horizontal";
+  let i44 = 0;
+  function splitText() {
+    const span = document.createElement("span");
+    span.textContent = msg44[i44];
+    span.className = "split-in";
+    document.getElementById("text44").appendChild(span);
+    i44++;
+    if (i44 < msg44.length) setTimeout(splitText, 100);
+  }
+  splitText();
+</script>

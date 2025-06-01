@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Input: 5+3</h2>
+  <input id="input" placeholder="Contoh: 10+20">
+  <button onclick="jumlah()">Jumlahkan</button>
+  <p id="hasil"></p>
+
+  <script>
+    function jumlah() {
+      let val = document.getElementById("input").value;
+      let [a, b] = val.split("+").map(Number);
+      document.getElementById("hasil").textContent = "Hasil: " + (a + b);
+    }
+  </script>
+</body>
+</html>

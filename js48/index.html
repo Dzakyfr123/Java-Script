@@ -1,0 +1,25 @@
+<p id="text14"></p>
+<style>
+  .bounce-letter {
+    display: inline-block;
+    animation: bounceIn 0.5s ease forwards;
+  }
+  @keyframes bounceIn {
+    0% { transform: translateY(-100%); opacity: 0; }
+    60% { transform: translateY(20%); opacity: 1; }
+    100% { transform: translateY(0); }
+  }
+</style>
+<script>
+  const msg14 = "Bounce Masuk";
+  let i14 = 0;
+  function bounceText() {
+    const span = document.createElement("span");
+    span.textContent = msg14[i14];
+    span.className = "bounce-letter";
+    document.getElementById("text14").appendChild(span);
+    i14++;
+    if (i14 < msg14.length) setTimeout(bounceText, 100);
+  }
+  bounceText();
+</script>

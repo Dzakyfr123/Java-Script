@@ -1,0 +1,23 @@
+<p id="text63"></p>
+<style>
+  .scale-wave {
+    display: inline-block;
+    animation: waveScale 0.8s infinite ease-in-out;
+  }
+  @keyframes waveScale {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+  }
+</style>
+<script>
+  const msg63 = "Skala Bergelombang";
+  const el63 = document.getElementById("text63");
+
+  for (let i = 0; i < msg63.length; i++) {
+    const span = document.createElement("span");
+    span.textContent = msg63[i];
+    span.className = "scale-wave";
+    span.style.animationDelay = `${i * 0.1}s`;
+    el63.appendChild(span);
+  }
+</script>

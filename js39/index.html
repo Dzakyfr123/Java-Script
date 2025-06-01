@@ -1,0 +1,19 @@
+<p id="text5"></p>
+<script>
+  const msg5 = "Teks Berkedip";
+  let i5 = 0;
+  function blinkLetters() {
+    const span = document.createElement("span");
+    span.textContent = msg5[i5];
+    span.style.animation = "blink 0.5s infinite";
+    document.getElementById("text5").appendChild(span);
+    i5++;
+    if (i5 < msg5.length) setTimeout(blinkLetters, 150);
+  }
+  blinkLetters();
+</script>
+<style>
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+</style>

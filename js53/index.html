@@ -1,0 +1,28 @@
+<p id="text19"></p>
+<style>
+  .spin-in {
+    display: inline-block;
+    transform: rotateZ(-180deg);
+    opacity: 0;
+    animation: spinIn 0.4s forwards;
+  }
+  @keyframes spinIn {
+    to {
+      transform: rotateZ(0deg);
+      opacity: 1;
+    }
+  }
+</style>
+<script>
+  const msg19 = "Berputar Masuk";
+  let i19 = 0;
+  function spinInText() {
+    const span = document.createElement("span");
+    span.textContent = msg19[i19];
+    span.className = "spin-in";
+    document.getElementById("text19").appendChild(span);
+    i19++;
+    if (i19 < msg19.length) setTimeout(spinInText, 100);
+  }
+  spinInText();
+</script>

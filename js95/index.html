@@ -1,0 +1,27 @@
+<p id="text61"></p>
+<style>
+  .grow-shake {
+    display: inline-block;
+    transform: scale(0.8);
+    opacity: 0;
+    animation: growShake 0.5s forwards;
+  }
+  @keyframes growShake {
+    50% { transform: scale(1.1) rotate(2deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0); }
+  }
+</style>
+<script>
+  const msg61 = "Tumbuh & Goyang";
+  let i61 = 0;
+  function growShakeText() {
+    const span = document.createElement("span");
+    span.textContent = msg61[i61];
+    span.className = "grow-shake";
+    span.style.animationDelay = `${i61 * 0.1}s`;
+    document.getElementById("text61").appendChild(span);
+    i61++;
+    if(i61 < msg61.length) setTimeout(growShakeText, 90);
+  }
+  growShakeText();
+</script>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Enter untuk Menjumlahkan</h2>
+  <input id="a" type="number"> + 
+  <input id="b" type="number" onkeypress="if(event.key==='Enter'){jumlah()}">
+  <p>Hasil: <span id="hasil"></span></p>
+
+  <script>
+    function jumlah() {
+      let a = parseFloat(document.getElementById("a").value);
+      let b = parseFloat(document.getElementById("b").value);
+      document.getElementById("hasil").textContent = a + b;
+    }
+  </script>
+</body>
+</html>

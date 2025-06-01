@@ -1,0 +1,13 @@
+<p id="text4"></p>
+<script>
+  const msg4 = "Loop Tulis & Hapus";
+  let i4 = 0, del = false;
+  function animate4() {
+    document.getElementById("text4").innerHTML = msg4.substring(0, i4);
+    if (!del && i4 < msg4.length) i4++;
+    else if (del && i4 > 0) i4--;
+    else del = !del;
+    setTimeout(animate4, del ? 50 : 150);
+  }
+  animate4();
+</script>

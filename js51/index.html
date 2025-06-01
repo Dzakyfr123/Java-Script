@@ -1,0 +1,28 @@
+<p id="text17"></p>
+<style>
+  .slide-up {
+    display: inline-block;
+    transform: translateY(30px);
+    opacity: 0;
+    animation: slideUp 0.4s forwards;
+  }
+  @keyframes slideUp {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+</style>
+<script>
+  const msg17 = "Slide dari bawah";
+  let i17 = 0;
+  function slideUpText() {
+    const span = document.createElement("span");
+    span.textContent = msg17[i17];
+    span.className = "slide-up";
+    document.getElementById("text17").appendChild(span);
+    i17++;
+    if (i17 < msg17.length) setTimeout(slideUpText, 100);
+  }
+  slideUpText();
+</script>

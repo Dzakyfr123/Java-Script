@@ -1,0 +1,29 @@
+<p id="text51"></p>
+<style>
+  .blur-in {
+    display: inline-block;
+    filter: blur(5px);
+    opacity: 0;
+    animation: clearBlur 0.5s forwards;
+  }
+  @keyframes clearBlur {
+    to {
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+</style>
+<script>
+  const msg51 = "Blur Hilang";
+  let i51 = 0;
+  function blurInText() {
+    const span = document.createElement("span");
+    span.textContent = msg51[i51];
+    span.className = "blur-in";
+    span.style.animationDelay = `${i51 * 0.1}s`;
+    document.getElementById("text51").appendChild(span);
+    i51++;
+    if (i51 < msg51.length) setTimeout(blurInText, 100);
+  }
+  blurInText();
+</script>

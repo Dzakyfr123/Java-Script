@@ -1,0 +1,16 @@
+<p id="text27"></p>
+<script>
+  const msg27 = "Teks Gradien Berwarna";
+  let i27 = 0;
+  function gradientTyping() {
+    const span = document.createElement("span");
+    span.textContent = msg27[i27];
+    span.style.background = "linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet)";
+    span.style.webkitBackgroundClip = "text";
+    span.style.color = "transparent";
+    document.getElementById("text27").appendChild(span);
+    i27++;
+    if (i27 < msg27.length) setTimeout(gradientTyping, 120);
+  }
+  gradientTyping();
+</script>

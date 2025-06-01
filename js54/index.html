@@ -1,0 +1,28 @@
+<p id="text20"></p>
+<style>
+  .fall-letter {
+    display: inline-block;
+    transform: translateY(-100px);
+    opacity: 0;
+    animation: fallIn 0.3s forwards;
+  }
+  @keyframes fallIn {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+</style>
+<script>
+  const msg20 = "Turun dari atas";
+  let i20 = 0;
+  function fallInText() {
+    const span = document.createElement("span");
+    span.textContent = msg20[i20];
+    span.className = "fall-letter";
+    document.getElementById("text20").appendChild(span);
+    i20++;
+    if (i20 < msg20.length) setTimeout(fallInText, 100);
+  }
+  fallInText();
+</script>

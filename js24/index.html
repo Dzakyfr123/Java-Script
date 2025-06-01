@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Jumlahkan Banyak Angka</h2>
+  <input id="angka" placeholder="Pisahkan dengan koma (,)">
+  <button onclick="jumlah()">Jumlahkan</button>
+  <p>Hasil: <span id="hasil"></span></p>
+
+  <script>
+    function jumlah() {
+      let angka = document.getElementById("angka").value.split(",").map(Number);
+      let total = angka.reduce((a, b) => a + b, 0);
+      document.getElementById("hasil").textContent = total;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<p id="text32"></p>
+<style>
+  .slide-grow {
+    display: inline-block;
+    transform: translateX(-40px) scale(0.5);
+    opacity: 0;
+    animation: slideGrow 0.5s forwards;
+  }
+  @keyframes slideGrow {
+    to {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+  }
+</style>
+<script>
+  const msg32 = "Slide & Besar";
+  let i32 = 0;
+  function animate32() {
+    const span = document.createElement("span");
+    span.textContent = msg32[i32];
+    span.className = "slide-grow";
+    document.getElementById("text32").appendChild(span);
+    i32++;
+    if (i32 < msg32.length) setTimeout(animate32, 100);
+  }
+  animate32();
+</script>

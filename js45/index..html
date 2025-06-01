@@ -1,0 +1,24 @@
+<p id="text11"></p>
+<style>
+  .zoom-in {
+    display: inline-block;
+    transform: scale(0);
+    animation: zoom 0.4s forwards;
+  }
+  @keyframes zoom {
+    to { transform: scale(1); }
+  }
+</style>
+<script>
+  const msg11 = "Zoom Masuk";
+  let i11 = 0;
+  function zoomIn() {
+    const span = document.createElement("span");
+    span.textContent = msg11[i11];
+    span.className = "zoom-in";
+    document.getElementById("text11").appendChild(span);
+    i11++;
+    if (i11 < msg11.length) setTimeout(zoomIn, 100);
+  }
+  zoomIn();
+</script>

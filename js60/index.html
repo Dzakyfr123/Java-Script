@@ -1,0 +1,14 @@
+<p id="text26"></p>
+<script>
+  const msg26 = "Ketik dengan suara...";
+  let i26 = 0;
+  function typeWithSound() {
+    if (i26 < msg26.length) {
+      document.getElementById("text26").innerHTML += msg26[i26];
+      console.log("click"); // Simulasi bunyi ketik
+      i26++;
+      setTimeout(typeWithSound, 100);
+    }
+  }
+  typeWithSound();
+</script>

@@ -1,0 +1,29 @@
+<p id="text65"></p>
+<style>
+  .explode-in {
+    display: inline-block;
+    transform: scale(2);
+    opacity: 0;
+    animation: explodeIn 0.4s ease-out forwards;
+  }
+  @keyframes explodeIn {
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+</style>
+<script>
+  const msg65 = "Meledak Masuk";
+  let i65 = 0;
+  function explodeText() {
+    const span = document.createElement("span");
+    span.textContent = msg65[i65];
+    span.className = "explode-in";
+    span.style.animationDelay = `${i65 * 0.05}s`;
+    document.getElementById("text65").appendChild(span);
+    i65++;
+    if (i65 < msg65.length) setTimeout(explodeText, 70);
+  }
+  explodeText();
+</script>

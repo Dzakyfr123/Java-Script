@@ -1,0 +1,30 @@
+<p id="text55"></p>
+<style>
+  .slide-color {
+    display: inline-block;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideColorIn 0.6s forwards;
+  }
+  @keyframes slideColorIn {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+      color: #FF5722;
+    }
+  }
+</style>
+<script>
+  const msg55 = "Geser & Berwarna";
+  let i55 = 0;
+  function slideColorText() {
+    const span = document.createElement("span");
+    span.textContent = msg55[i55];
+    span.className = "slide-color";
+    span.style.animationDelay = `${i55 * 0.1}s`;
+    document.getElementById("text55").appendChild(span);
+    i55++;
+    if (i55 < msg55.length) setTimeout(slideColorText, 100);
+  }
+  slideColorText();
+</script>

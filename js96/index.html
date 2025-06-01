@@ -1,0 +1,29 @@
+<p id="text62"></p>
+<style>
+  .flip-vert {
+    display: inline-block;
+    transform: rotateX(90deg);
+    opacity: 0;
+    animation: flipIn 0.5s forwards;
+  }
+  @keyframes flipIn {
+    to {
+      transform: rotateX(0);
+      opacity: 1;
+    }
+  }
+</style>
+<script>
+  const msg62 = "Flip Vertikal";
+  let i62 = 0;
+  function flipVertText() {
+    const span = document.createElement("span");
+    span.textContent = msg62[i62];
+    span.className = "flip-vert";
+    span.style.animationDelay = `${i62 * 0.1}s`;
+    document.getElementById("text62").appendChild(span);
+    i62++;
+    if(i62 < msg62.length) setTimeout(flipVertText, 90);
+  }
+  flipVertText();
+</script>

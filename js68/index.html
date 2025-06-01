@@ -1,0 +1,28 @@
+<p id="text34"></p>
+<style>
+  .zoom-fade {
+    display: inline-block;
+    transform: scale(0.3);
+    opacity: 0;
+    animation: zoomFade 0.4s forwards;
+  }
+  @keyframes zoomFade {
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+</style>
+<script>
+  const msg34 = "Zoom + Fade";
+  let i34 = 0;
+  function animateZoomFade() {
+    const span = document.createElement("span");
+    span.textContent = msg34[i34];
+    span.className = "zoom-fade";
+    document.getElementById("text34").appendChild(span);
+    i34++;
+    if (i34 < msg34.length) setTimeout(animateZoomFade, 100);
+  }
+  animateZoomFade();
+</script>

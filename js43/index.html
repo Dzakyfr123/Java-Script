@@ -1,0 +1,21 @@
+<p id="text9"></p>
+<style>
+  .wave-letter {
+    display: inline-block;
+    animation: wave 1s ease-in-out infinite;
+  }
+  @keyframes wave {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+</style>
+<script>
+  const msg9 = "Efek Gelombang";
+  for (let i = 0; i < msg9.length; i++) {
+    const span = document.createElement("span");
+    span.textContent = msg9[i];
+    span.className = "wave-letter";
+    span.style.animationDelay = `${i * 0.1}s`;
+    document.getElementById("text9").appendChild(span);
+  }
+</script>

@@ -1,0 +1,28 @@
+<p id="text42"></p>
+<style>
+  .slide-left {
+    display: inline-block;
+    transform: translateX(-60px);
+    opacity: 0;
+    animation: slideL 0.5s forwards;
+  }
+  @keyframes slideL {
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+</style>
+<script>
+  const msg42 = "Slide dari Kiri";
+  let i42 = 0;
+  function slideFromLeft() {
+    const span = document.createElement("span");
+    span.textContent = msg42[i42];
+    span.className = "slide-left";
+    document.getElementById("text42").appendChild(span);
+    i42++;
+    if (i42 < msg42.length) setTimeout(slideFromLeft, 90);
+  }
+  slideFromLeft();
+</script>

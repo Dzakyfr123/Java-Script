@@ -1,0 +1,27 @@
+<p id="text50"></p>
+<style>
+  .zigzag {
+    display: inline-block;
+    position: relative;
+    animation: zigzagAnim 0.5s forwards;
+  }
+  @keyframes zigzagAnim {
+    0%   { top: 0; left: 0; opacity: 0; }
+    50%  { top: -5px; left: 5px; opacity: 1; }
+    100% { top: 0; left: 0; }
+  }
+</style>
+<script>
+  const msg50 = "Bergeser Zigzag";
+  let i50 = 0;
+  function zigzagText() {
+    const span = document.createElement("span");
+    span.textContent = msg50[i50];
+    span.className = "zigzag";
+    span.style.animationDelay = `${i50 * 0.1}s`;
+    document.getElementById("text50").appendChild(span);
+    i50++;
+    if (i50 < msg50.length) setTimeout(zigzagText, 80);
+  }
+  zigzagText();
+</script>

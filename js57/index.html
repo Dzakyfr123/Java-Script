@@ -1,0 +1,17 @@
+<p id="text23"></p>
+<script>
+  const msg23 = "Tengah ke Samping";
+  const center = Math.floor(msg23.length / 2);
+  let left = center - 1;
+  let right = center;
+
+  function typeFromCenter() {
+    if (left >= 0) {
+      document.getElementById("text23").innerHTML = msg23.substring(left, right + 1);
+      left--;
+      right++;
+      setTimeout(typeFromCenter, 150);
+    }
+  }
+  typeFromCenter();
+</script>

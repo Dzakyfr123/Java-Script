@@ -1,0 +1,29 @@
+<p id="text49"></p>
+<style>
+  .spiral-in {
+    display: inline-block;
+    opacity: 0;
+    transform: rotate(360deg) scale(0);
+    animation: spiralIn 0.5s forwards;
+  }
+  @keyframes spiralIn {
+    to {
+      transform: rotate(0) scale(1);
+      opacity: 1;
+    }
+  }
+</style>
+<script>
+  const msg49 = "Efek Spiral";
+  let i49 = 0;
+  function spiralText() {
+    const span = document.createElement("span");
+    span.textContent = msg49[i49];
+    span.className = "spiral-in";
+    span.style.animationDelay = `${i49 * 0.1}s`;
+    document.getElementById("text49").appendChild(span);
+    i49++;
+    if (i49 < msg49.length) setTimeout(spiralText, 100);
+  }
+  spiralText();
+</script>

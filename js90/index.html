@@ -1,0 +1,29 @@
+<p id="text56"></p>
+<style>
+  .move-right {
+    display: inline-block;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: moveRightIn 0.5s forwards;
+  }
+  @keyframes moveRightIn {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+</style>
+<script>
+  const msg56 = "Geser Kanan";
+  let i56 = 0;
+  function moveRightText() {
+    const span = document.createElement("span");
+    span.textContent = msg56[i56];
+    span.className = "move-right";
+    span.style.animationDelay = `${i56 * 0.1}s`;
+    document.getElementById("text56").appendChild(span);
+    i56++;
+    if(i56 < msg56.length) setTimeout(moveRightText, 80);
+  }
+  moveRightText();
+</script>

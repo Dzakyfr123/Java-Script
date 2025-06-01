@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Penjumlahan Tabel</h2>
+  <table border="1">
+    <tr>
+      <td><input id="a" type="number"></td>
+      <td>+</td>
+      <td><input id="b" type="number"></td>
+      <td><button onclick="jumlah()">=</button></td>
+      <td id="hasil"></td>
+    </tr>
+  </table>
+
+  <script>
+    function jumlah() {
+      let a = +document.getElementById("a").value;
+      let b = +document.getElementById("b").value;
+      document.getElementById("hasil").textContent = a + b;
+    }
+  </script>
+</body>
+</html>

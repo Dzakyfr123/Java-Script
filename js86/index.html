@@ -1,0 +1,29 @@
+<p id="text52"></p>
+<style>
+  .spin-in {
+    display: inline-block;
+    transform: rotate(180deg);
+    opacity: 0;
+    animation: spinIn 0.5s forwards;
+  }
+  @keyframes spinIn {
+    to {
+      transform: rotate(0deg);
+      opacity: 1;
+    }
+  }
+</style>
+<script>
+  const msg52 = "Spin Muncul";
+  let i52 = 0;
+  function spinText() {
+    const span = document.createElement("span");
+    span.textContent = msg52[i52];
+    span.className = "spin-in";
+    span.style.animationDelay = `${i52 * 0.1}s`;
+    document.getElementById("text52").appendChild(span);
+    i52++;
+    if (i52 < msg52.length) setTimeout(spinText, 100);
+  }
+  spinText();
+</script>

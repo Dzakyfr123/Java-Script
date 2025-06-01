@@ -1,0 +1,29 @@
+<p id="text66"></p>
+<style>
+  .warp-in {
+    display: inline-block;
+    transform: skewX(30deg) scaleX(2);
+    opacity: 0;
+    animation: warpIn 0.5s forwards;
+  }
+  @keyframes warpIn {
+    to {
+      transform: skewX(0) scaleX(1);
+      opacity: 1;
+    }
+  }
+</style>
+<script>
+  const msg66 = "Efek Warp Masuk";
+  let i66 = 0;
+  function warpText() {
+    const span = document.createElement("span");
+    span.textContent = msg66[i66];
+    span.className = "warp-in";
+    span.style.animationDelay = `${i66 * 0.1}s`;
+    document.getElementById("text66").appendChild(span);
+    i66++;
+    if (i66 < msg66.length) setTimeout(warpText, 90);
+  }
+  warpText();
+</script>

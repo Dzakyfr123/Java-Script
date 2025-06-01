@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Penjumlahan Sederhana</h2>
+  <input id="a" type="number"> + <input id="b" type="number">
+  <button onclick="jumlah()">Jumlahkan</button>
+  <p>Hasil: <span id="hasil"></span></p>
+
+  <script>
+    function jumlah() {
+      let x = parseFloat(document.getElementById("a").value);
+      let y = parseFloat(document.getElementById("b").value);
+      document.getElementById("hasil").textContent = x + y;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<p id="text21"></p>
+<style>
+  .scale-opacity {
+    display: inline-block;
+    transform: scale(0);
+    opacity: 0;
+    animation: scaleAppear 0.5s forwards;
+  }
+  @keyframes scaleAppear {
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+</style>
+<script>
+  const msg21 = "Skala + Opacity";
+  let i21 = 0;
+  function scaleOpacityText() {
+    const span = document.createElement("span");
+    span.textContent = msg21[i21];
+    span.className = "scale-opacity";
+    document.getElementById("text21").appendChild(span);
+    i21++;
+    if (i21 < msg21.length) setTimeout(scaleOpacityText, 100);
+  }
+  scaleOpacityText();
+</script>

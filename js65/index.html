@@ -1,0 +1,21 @@
+<p id="text31"></p>
+<style>
+  .blink-random {
+    animation: blinkRandom 0.6s infinite alternate;
+  }
+  @keyframes blinkRandom {
+    0% { opacity: 1; }
+    100% { opacity: 0.3; }
+  }
+</style>
+<script>
+  const msg31 = "Huruf Berkedip Acak";
+  const el31 = document.getElementById("text31");
+  for (let i = 0; i < msg31.length; i++) {
+    const span = document.createElement("span");
+    span.textContent = msg31[i];
+    span.className = "blink-random";
+    span.style.animationDelay = `${Math.random()}s`;
+    el31.appendChild(span);
+  }
+</script>

@@ -1,0 +1,26 @@
+<p id="text35"></p>
+<style>
+  .bounce-left-right {
+    display: inline-block;
+    animation: bounceLR 0.6s ease-in-out forwards;
+  }
+  @keyframes bounceLR {
+    0%   { transform: translateX(0); }
+    50%  { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+  }
+</style>
+<script>
+  const msg35 = "Bounce Kiri-Kanan";
+  let i35 = 0;
+  function bounceText() {
+    const span = document.createElement("span");
+    span.textContent = msg35[i35];
+    span.className = "bounce-left-right";
+    span.style.animationDelay = `${i35 * 0.1}s`;
+    document.getElementById("text35").appendChild(span);
+    i35++;
+    if (i35 < msg35.length) setTimeout(bounceText, 100);
+  }
+  bounceText();
+</script>

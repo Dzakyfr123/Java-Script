@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Penjumlahan Slider</h2>
+  <input id="a" type="range" min="0" max="100" oninput="jumlah()">
+  <input id="b" type="range" min="0" max="100" oninput="jumlah()">
+  <p>Hasil: <span id="hasil"></span></p>
+
+  <script>
+    function jumlah() {
+      let a = Number(document.getElementById("a").value);
+      let b = Number(document.getElementById("b").value);
+      document.getElementById("hasil").textContent = a + b;
+    }
+  </script>
+</body>
+</html>

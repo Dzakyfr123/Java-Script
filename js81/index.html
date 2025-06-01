@@ -1,0 +1,28 @@
+<p id="text48"></p>
+<style>
+  .stretch-in {
+    display: inline-block;
+    transform: scaleX(0);
+    opacity: 0;
+    animation: stretchIn 0.4s forwards;
+  }
+  @keyframes stretchIn {
+    to {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+  }
+</style>
+<script>
+  const msg48 = "Melebar Horizontal";
+  let i48 = 0;
+  function stretchText() {
+    const span = document.createElement("span");
+    span.textContent = msg48[i48];
+    span.className = "stretch-in";
+    document.getElementById("text48").appendChild(span);
+    i48++;
+    if (i48 < msg48.length) setTimeout(stretchText, 80);
+  }
+  stretchText();
+</script>

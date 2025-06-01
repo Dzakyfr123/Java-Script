@@ -1,0 +1,12 @@
+<p id="text16"></p>
+<script>
+  const msg16 = "Ketik dengan delay acak";
+  let i16 = 0;
+  function typeRandomDelay() {
+    if (i16 < msg16.length) {
+      document.getElementById("text16").innerHTML += msg16[i16++];
+      setTimeout(typeRandomDelay, Math.random() * 150 + 50);
+    }
+  }
+  typeRandomDelay();
+</script>

@@ -1,0 +1,28 @@
+<p id="text30"></p>
+<style>
+  .flip-random {
+    display: inline-block;
+    transform: rotateY(180deg);
+    opacity: 0;
+    animation: flipRandom 0.5s forwards;
+  }
+  @keyframes flipRandom {
+    to {
+      transform: rotateY(0);
+      opacity: 1;
+    }
+  }
+</style>
+<script>
+  const msg30 = "Flip Acak";
+  const indexes = [...msg30.keys()].sort(() => Math.random() - 0.5);
+  const text30 = document.getElementById("text30");
+
+  for (let i = 0; i < msg30.length; i++) {
+    const span = document.createElement("span");
+    span.textContent = msg30[i];
+    span.className = "flip-random";
+    span.style.animationDelay = `${indexes.indexOf(i) * 0.1}s`;
+    text30.appendChild(span);
+  }
+</script>

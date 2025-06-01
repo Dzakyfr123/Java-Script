@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Penjumlahan Angka Acak</h2>
+  <button onclick="acak()">Acak dan Jumlahkan</button>
+  <p id="hasil"></p>
+
+  <script>
+    function acak() {
+      let a = Math.floor(Math.random() * 100);
+      let b = Math.floor(Math.random() * 100);
+      document.getElementById("hasil").textContent = `${a} + ${b} = ${a + b}`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<div id="text25" style="position: relative; width: 200px; height: 200px;"></div>
+<script>
+  const msg25 = "Mengetik Melingkar";
+  const radius = 80;
+  const container = document.getElementById("text25");
+  container.style.margin = "auto";
+
+  let angle = 0;
+  let i25 = 0;
+
+  function circularTyping() {
+    if (i25 < msg25.length) {
+      const span = document.createElement("span");
+      const rad = angle * (Math.PI / 180);
+      span.textContent = msg25[i25];
+      span.style.position = "absolute";
+      span.style.left = `${100 + radius * Math.cos(rad)}px`;
+      span.style.top = `${100 + radius * Math.sin(rad)}px`;
+      container.appendChild(span);
+      angle += 360 / msg25.length;
+      i25++;
+      setTimeout(circularTyping, 150);
+    }
+  }
+  circularTyping();
+</script>

@@ -1,0 +1,26 @@
+<p id="text18"></p>
+<style>
+  .flipY {
+    display: inline-block;
+    transform: rotateX(180deg);
+    animation: flipY 0.5s forwards;
+  }
+  @keyframes flipY {
+    to {
+      transform: rotateX(0);
+    }
+  }
+</style>
+<script>
+  const msg18 = "Muncul Terbalik";
+  let i18 = 0;
+  function flipYText() {
+    const span = document.createElement("span");
+    span.textContent = msg18[i18];
+    span.className = "flipY";
+    document.getElementById("text18").appendChild(span);
+    i18++;
+    if (i18 < msg18.length) setTimeout(flipYText, 100);
+  }
+  flipYText();
+</script>

@@ -1,0 +1,26 @@
+<p id="text10"></p>
+<style>
+  .flip-letter {
+    display: inline-block;
+    transform: rotateX(90deg);
+    animation: flip 0.5s forwards;
+  }
+  @keyframes flip {
+    to {
+      transform: rotateX(0);
+    }
+  }
+</style>
+<script>
+  const msg10 = "Flip Masuk";
+  let i10 = 0;
+  function flipText() {
+    const span = document.createElement("span");
+    span.textContent = msg10[i10];
+    span.className = "flip-letter";
+    document.getElementById("text10").appendChild(span);
+    i10++;
+    if (i10 < msg10.length) setTimeout(flipText, 100);
+  }
+  flipText();
+</script>
